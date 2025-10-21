@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Phone SDK Demo</title>
+    <style>
+      body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2em; background: #f4f6fa; }
+      #container { max-width: 600px; margin: auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0001; padding: 2em; }
+      h1 { text-align: center; color: #2a3b4c; }
+      #controls { margin-bottom: 1.5em; display: flex; flex-direction: column; gap: 1em; }
+      .row { display: flex; gap: 1em; align-items: center; }
+      input { padding: 0.5em; border-radius: 6px; border: 1px solid #bbb; font-size: 1em; }
+      button { padding: 0.5em 1.2em; border-radius: 6px; border: none; background: #2a7ae2; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.2s; }
+      button:disabled { background: #bbb; cursor: not-allowed; }
+      button:not(:disabled):hover { background: #185bb5; }
+      #videos { display: flex; gap: 1em; justify-content: center; margin-bottom: 1em; }
+      video { width: 240px; height: 180px; background: #222; border-radius: 8px; border: 2px solid #2a7ae2; }
+      #log { background: #222; color: #eee; padding: 1em; height: 120px; overflow-y: auto; border-radius: 8px; font-size: 0.95em; }
+      .label { min-width: 80px; color: #2a3b4c; }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Phone SDK Demo</h1>
+      <div id="videos">
+        <div>
+          <div class="label">Local</div>
+          <video id="localVideo" autoplay muted playsinline></video>
+        </div>
+        <div>
+          <div class="label">Remote</div>
+          <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+      </div>
+      <div id="controls">
+        <div class="row">
+          <input id="clientId" placeholder="Your Client ID" />
+          <button id="registerBtn">Register</button>
+        </div>
+        <div class="row">
+          <input id="target" placeholder="Target Client ID" />
+          <button id="callBtn">Call</button>
+          <button id="hangupBtn">Hangup</button>
+          <button id="muteBtn">Mute</button>
+          <button id="unmuteBtn">Unmute</button>
+        </div>
+      </div>
+      <pre id="log"></pre>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
